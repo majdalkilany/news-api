@@ -18,12 +18,11 @@ app.get('/news', async (req, res) => {
     }
 });
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
-app.use(cors());
+const corsOptions = {
+    origin:[ 'https://teal-dragon-781c99.netlify.app','*'],
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+app.use(cors(corsOptions));
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
