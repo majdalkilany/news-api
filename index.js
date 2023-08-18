@@ -19,7 +19,7 @@ app.get('/news', async (req, res) => {
 });
 
 const corsOptions = {
-    origin:[ 'https://teal-dragon-781c99.netlify.app','*'],
+    origin:'*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   };
 app.use(cors(corsOptions));
